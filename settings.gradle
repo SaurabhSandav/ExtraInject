@@ -1,0 +1,2 @@
+include ':extrainject-sample', ':extrainject-annotations', ':extrainject-processor', ':extrainject-work'
+rootProject.name='ExtraInject'

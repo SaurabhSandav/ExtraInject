@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.kapt'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // ExtraInject annotations
+    implementation project(':extrainject-annotations')
+
+    // Kotlin
+    implementation Kotlin.STDLIB
+
+    // JavaPoet
+    implementation JavaPoet.JAVA_POET
+
+    // Google Auto
+    implementation Auto.COMMON
+    implementation Auto.SERVICE
+    kapt Auto.SERVICE
+}
